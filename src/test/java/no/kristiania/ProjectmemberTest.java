@@ -11,10 +11,15 @@ public class ProjectmemberTest {
     @Test
     void shouldRetriveProjectMember(){
         ProjectMemberDao dao = new ProjectMemberDao();
-        String member = "Johannes";
-        dao.insertMember(member);
-        assertThat(dao.listAll()).contains(member);
 
+        String memberName = pickOne(new String[] {"Per", "Knut", "Arne", "Johannes"});
+        dao.insertMember(memberName);
+        assertThat(dao.listAll()).contains(memberName);
+
+    }
+
+    private String pickOne(String[] strings) {
+        return null;
     }
 
 }
