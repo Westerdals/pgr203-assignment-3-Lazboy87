@@ -9,10 +9,11 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 public class ProjectmemberTest {
 
     @Test
-     void shouldRetriveProjectMember(){
-        ProjectMemberDao dao= new ProjectMemberDao;
-        dao.insertMember("Johannes");
-        assertThat(dao.listall()).contains("Johannes");
+    void shouldRetriveProjectMember(){
+        ProjectMemberDao dao = new ProjectMemberDao();
+        String member = "Johannes";
+        dao.insertMember(member);
+        assertThat(dao.listAll()).contains(member);
 
     }
 
