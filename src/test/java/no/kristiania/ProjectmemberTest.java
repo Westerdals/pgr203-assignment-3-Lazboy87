@@ -1,4 +1,4 @@
-package java.no.kristiania;
+package no.kristiania;
 
 
 import no.kristiania.ProjectMemberDao;
