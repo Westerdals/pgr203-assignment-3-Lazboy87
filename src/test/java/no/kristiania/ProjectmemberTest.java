@@ -10,7 +10,7 @@ public class ProjectmemberTest {
 
     @Test
      void shouldRetriveProjectMember(){
-        ProjectMemberDao dao= new ProjectMemberDao();
+        ProjectMemberDao dao= new ProjectMemberDao;
         dao.insertMember("Johannes");
         assertThat(dao.listall()).contains("Johannes");
 

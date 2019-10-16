@@ -1,8 +1,8 @@
-# <Skriv tittel på prosjektet>
+#Lasse og Fredrick DOA ProjectMembers
 
-[![Build Status](https://travis-ci.com/Westerdals/prosjektnavn.svg?token=Sj4fcBr8hVerjvQWkoAz&branch=master)](https://travis-ci.com/Westerdals/prosjektnavn)
+[![Build Status](https://travis-ci.com/Westerdals/prosjektnavn.svg?token=Sj4fcBr8hVerjvQWkoAz&branch=master)](https://travis-ci.com/Westerdals/pgr203-assignment-3-Lazboy87)
 
-<En kort forklaring på hva dette prosjektet inneholder>
+Prosjektet inneholder en database opprettet i java som en kan hente ut prosjektmedlemmer og legge til nye prosjektmedlemmer.
 
 ## Usage
 
