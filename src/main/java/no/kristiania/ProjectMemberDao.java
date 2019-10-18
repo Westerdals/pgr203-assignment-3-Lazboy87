@@ -33,11 +33,11 @@ public class ProjectMemberDao {
 
     }
 
-    public void insertMail(String memberMail) throws SQLException {
-
+    public void insertMail(String memberMail,String membername) throws SQLException {
+        membername=projectName;
         try (Connection conn = dataSource.getConnection();) {
             PreparedStatement statement = conn.prepareStatement(
-                    "insert into projectMembers (email) values (?) where ()");
+                    "insert into projectMembers (email) values (?) where name = membername");
             statement.setString(1, memberMail);
             statement.executeUpdate();
         }
@@ -82,7 +82,7 @@ public class ProjectMemberDao {
 
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
         memberDao.insertMember(projectName);
-        memberDao.insertMember(projectMail);
+        memberDao.insertMail(projectMail,projectName);
 
         System.out.println(memberDao.listAll());
     }
