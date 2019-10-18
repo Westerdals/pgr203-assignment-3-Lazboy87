@@ -34,13 +34,14 @@ public class ProjectMemberDao {
     }
 
     public void insertMail(String memberMail,String membername) throws SQLException {
-        membername=projectName;
+
         try (Connection conn = dataSource.getConnection();) {
             PreparedStatement statement = conn.prepareStatement(
-                    "insert into projectMembers (email) values (?) where name = membername");
+                    "insert into projectMembers (email) values (?)"+" where (name) =" + membername);
             statement.setString(1, memberMail);
             statement.executeUpdate();
         }
+
 
     }
 
