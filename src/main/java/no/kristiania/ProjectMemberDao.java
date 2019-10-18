@@ -1,7 +1,6 @@
 package no.kristiania;
 
 import org.postgresql.ds.PGSimpleDataSource;
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -53,7 +52,7 @@ public class ProjectMemberDao {
         dataSource.setPassword("usersqlbruker");
 
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
-        ProjectMemberDao.insertMember("test");
+        memberDao.insertMember("test");
     }
 }
 
