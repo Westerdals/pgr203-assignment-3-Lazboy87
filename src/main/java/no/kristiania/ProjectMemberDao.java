@@ -16,15 +16,13 @@ public class ProjectMemberDao {
         this.dataSource = dataSource;
     }
 
-    public void insertMember(String memberName) {
+    public void insertMember(String memberName) throws SQLException {
 
         try (Connection conn = dataSource.getConnection();) {
             PreparedStatement statement = conn.prepareStatement(
                     "insert into projectMembers (name) values (?)");
             statement.setString(1, memberName);
             statement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
 
     }
