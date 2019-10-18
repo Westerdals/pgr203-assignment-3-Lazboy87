@@ -22,16 +22,21 @@ public class ProjectMemberDao {
         this.dataSource = dataSource;
     }
 
-    public void insertMember(String memberName) throws SQLException {
+    public void insertMember(String memberName, String memberMail) throws SQLException {
 
         try (Connection conn = dataSource.getConnection();) {
             PreparedStatement statement = conn.prepareStatement(
-                    "insert into projectMembers (name) values (?)");
+                    "insert into projectMembers (name) values (?), projectMembers (email) values (?)");
             statement.setString(1, memberName);
+            PreparedStatement statement = conn.prepareStatement(
+                    "insert into projectMembers (name) values (?), projectMembers (email) values (?)");
+            statement.setString(1, memberMail);
             statement.executeUpdate();
         }
 
     }
+
+
 
     public List<String> listAll() throws SQLException {
         try (Connection connection = dataSource.getConnection()) {
@@ -43,6 +48,7 @@ public class ProjectMemberDao {
 
                     while (resultSet.next()) {
                         result.add(resultSet.getString("name"));
+                        result.add(resultSet.getString("email"));
                     }
                     return result;
                 }
@@ -51,8 +57,11 @@ public class ProjectMemberDao {
     }
 
     public static void main(String[] args) throws SQLException, IOException {
-        System.out.println("enter a product name to insert: ");
+        System.out.println("enter a member name to insert: ");
         String projectName = new Scanner(System.in).nextLine();
+
+        System.out.println("enter a email to member: ");
+        String projectMail = new Scanner(System.in).nextLine();
 
         Properties properties = new Properties();
         properties.load(new FileReader("task-manager.properties"));
@@ -65,6 +74,7 @@ public class ProjectMemberDao {
 
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
         memberDao.insertMember(projectName);
+        memberDao.insertMember(projectMail);
 
         System.out.println(memberDao.listAll());
     }
