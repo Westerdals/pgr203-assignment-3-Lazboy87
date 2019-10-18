@@ -1,5 +1,7 @@
 package no.kristiania;
 
+import org.postgresql.ds.PGSimpleDataSource;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,6 +44,13 @@ public class ProjectMemberDao {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        PGSimpleDataSource dataSource= new PGSimpleDataSource();
+
+        ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
+        ProjectMemberDao.insertMember("test");
     }
 }
 
