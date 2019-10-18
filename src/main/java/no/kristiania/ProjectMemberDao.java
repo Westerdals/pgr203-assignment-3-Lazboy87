@@ -31,6 +31,11 @@ public class ProjectMemberDao {
     }
 
     public List<String> listAll() {
+        try (Connection connection = dataSource.getConnection()) {
+            connection.prepareStatement("select * from projectMembers");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return projectMembers;
     }
 }
