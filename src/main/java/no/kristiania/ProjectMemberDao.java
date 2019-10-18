@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ProjectMemberDao {
 
@@ -46,13 +47,19 @@ public class ProjectMemberDao {
     }
 
     public static void main(String[] args) throws SQLException {
+        System.out.println("enter a product name to insert: ");
+        String projectName = new Scanner(System.in).nextLine();
+
+
         PGSimpleDataSource dataSource= new PGSimpleDataSource();
         dataSource.setURL("jdbc:postgresql://localhost:5432/projectmembers");
         dataSource.setUser("projectuser1");
         dataSource.setPassword("usersqlbruker");
 
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
-        memberDao.insertMember("test");
+        memberDao.insertMember(projectName);
+
+        System.out.println(memberDao.listAll());
     }
 }
 
