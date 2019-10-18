@@ -34,12 +34,6 @@ public class ProjectMemberDao {
 
     }
 
-
-
-
-
-
-
     public List<String> listAll() throws SQLException {
         try (Connection connection = dataSource.getConnection()) {
             try (PreparedStatement statement = connection.prepareStatement(
@@ -68,7 +62,6 @@ public class ProjectMemberDao {
         Properties properties = new Properties();
         properties.load(new FileReader("task-manager.properties"));
 
-
         PGSimpleDataSource dataSource= new PGSimpleDataSource();
         dataSource.setURL("jdbc:postgresql://localhost:5432/projectmembers");
         dataSource.setUser("projectuser1");
@@ -76,7 +69,6 @@ public class ProjectMemberDao {
 
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
         memberDao.insertMember(projectName,projectMail);
-
 
         System.out.println(memberDao.listAll());
     }
