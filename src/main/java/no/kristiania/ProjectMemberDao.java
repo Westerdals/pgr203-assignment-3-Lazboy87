@@ -22,14 +22,22 @@ public class ProjectMemberDao {
         this.dataSource = dataSource;
     }
 
-    public void insertMember(String memberName, String memberMail) throws SQLException {
+    public void insertMember(String memberName) throws SQLException {
 
         try (Connection conn = dataSource.getConnection();) {
             PreparedStatement statement = conn.prepareStatement(
-                    "insert into projectMembers (name) values (?), projectMembers (email) values (?)");
+                    "insert into projectMembers (name) values (?)");
             statement.setString(1, memberName);
+            statement.executeUpdate();
+        }
+
+    }
+
+    public void insertMail(String memberMail) throws SQLException {
+
+        try (Connection conn = dataSource.getConnection();) {
             PreparedStatement statement = conn.prepareStatement(
-                    "insert into projectMembers (name) values (?), projectMembers (email) values (?)");
+                    "insert into projectMembers (email) values (?) where ()");
             statement.setString(1, memberMail);
             statement.executeUpdate();
         }
