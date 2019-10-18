@@ -46,8 +46,11 @@ public class ProjectMemberDao {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         PGSimpleDataSource dataSource= new PGSimpleDataSource();
+        dataSource.setURL("jdbc:postgresql://localhost:5432/projectmembers");
+        dataSource.setUser("projectuser1");
+        dataSource.setPassword("usersqlbruker");
 
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
         ProjectMemberDao.insertMember("test");
