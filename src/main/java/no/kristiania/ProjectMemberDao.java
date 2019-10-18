@@ -22,28 +22,21 @@ public class ProjectMemberDao {
         this.dataSource = dataSource;
     }
 
-    public void insertMember(String memberName) throws SQLException {
+    public void insertMember(String memberName, String memberMail) throws SQLException {
 
         try (Connection conn = dataSource.getConnection();) {
             PreparedStatement statement = conn.prepareStatement(
-                    "insert into projectMembers (name) values (?)");
+                    "insert into projectMembers (name, email) values (? , ?)");
             statement.setString(1, memberName);
+            statement.setString(2, memberMail);
             statement.executeUpdate();
         }
 
     }
 
-    public void insertMail(String memberMail,String membername) throws SQLException {
-
-        try (Connection conn = dataSource.getConnection();) {
-            PreparedStatement statement = conn.prepareStatement(
-                    "insert into projectMembers (email) values (?)"+" where (name) =" + membername);
-            statement.setString(1, memberMail);
-            statement.executeUpdate();
-        }
 
 
-    }
+
 
 
 
@@ -82,8 +75,8 @@ public class ProjectMemberDao {
         dataSource.setPassword(properties.getProperty("dataSource.password"));
 
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
-        memberDao.insertMember(projectName);
-        memberDao.insertMail(projectMail,projectName);
+        memberDao.insertMember(projectName,projectMail);
+
 
         System.out.println(memberDao.listAll());
     }
