@@ -2,12 +2,16 @@ package no.kristiania;
 
 import org.postgresql.ds.PGSimpleDataSource;
 import javax.sql.DataSource;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class ProjectMemberDao {
@@ -46,15 +50,18 @@ public class ProjectMemberDao {
         }
     }
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException {
         System.out.println("enter a product name to insert: ");
         String projectName = new Scanner(System.in).nextLine();
+
+        Properties properties = new Properties();
+        properties.load(new FileReader("task-manager.properties"));
 
 
         PGSimpleDataSource dataSource= new PGSimpleDataSource();
         dataSource.setURL("jdbc:postgresql://localhost:5432/projectmembers");
         dataSource.setUser("projectuser1");
-        dataSource.setPassword("usersqlbruker");
+        dataSource.setPassword(properties.getProperty("dataSource.password"));
 
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
         memberDao.insertMember(projectName);
