@@ -1,14 +1,19 @@
 package no.kristiania;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class ProjectMemberDao {
-    public void insertMember(String johannes) {
+
+    private List<String> members = new ArrayList<>();
+
+    public void insertMember(String memberName) {
+        members.add(memberName);
 
     }
 
     public List<String> listAll() {
-        return Collections.singletonList("Johannes");
+        return members;
     }
 }

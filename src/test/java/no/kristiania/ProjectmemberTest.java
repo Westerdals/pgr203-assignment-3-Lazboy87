@@ -4,6 +4,8 @@ package no.kristiania;
 import no.kristiania.ProjectMemberDao;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class ProjectmemberTest {
@@ -19,7 +21,8 @@ public class ProjectmemberTest {
     }
 
     private String pickOne(String[] strings) {
-        return null;
+        return strings[new Random().nextInt(strings.length)];
+
     }
 
 }
