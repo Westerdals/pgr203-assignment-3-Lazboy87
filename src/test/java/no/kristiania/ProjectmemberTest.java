@@ -2,14 +2,15 @@ package no.kristiania;
 
 import org.h2.jdbcx.JdbcDataSource;
 import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.Member;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Random;
+import java.util.*;
+
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class ProjectmemberTest {
+
+
 
 
 
@@ -95,6 +96,8 @@ public class ProjectmemberTest {
 
 
     }
+
+
 
 
     private String pickOne(String[] strings) {

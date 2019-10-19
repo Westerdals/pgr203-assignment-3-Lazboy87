@@ -56,15 +56,15 @@ public class ProjectMemberDao {
         System.out.println("enter a member name to insert: ");
         String projectName = new Scanner(System.in).nextLine();
 
-        System.out.println("enter a email to member: ");
+        System.out.println("enter a email to "+projectName +": ");
         String projectMail = new Scanner(System.in).nextLine();
 
         Properties properties = new Properties();
         properties.load(new FileReader("task-manager.properties"));
 
         PGSimpleDataSource dataSource= new PGSimpleDataSource();
-        dataSource.setURL("jdbc:postgresql://localhost:5432/projectmembers");
-        dataSource.setUser("projectuser1");
+        dataSource.setURL(properties.getProperty("dataSource.url"));
+        dataSource.setUser(properties.getProperty("dataSource.User"));
         dataSource.setPassword(properties.getProperty("dataSource.password"));
 
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
