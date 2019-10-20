@@ -1,5 +1,6 @@
 package no.kristiania;
 
+import org.flywaydb.core.Flyway;
 import org.h2.jdbcx.JdbcDataSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,22 +18,19 @@ public class ProjectmemberTest {
     private Connection connection;
     private ProjectMemberDao dao;
 
-    @BeforeEach
-    void dbSetup() throws SQLException {
-        JdbcDataSource dataSource = new JdbcDataSource();
-        dataSource.setURL("jdbc:h2:mem:test");
 
-        connection = dataSource.getConnection();
-        connection.createStatement().executeUpdate(
-                "create table projectMembers (name varchar (100),email varchar(100))");
-
-        dao = new ProjectMemberDao(dataSource);
-    }
 
 
     @Test
     void shouldRetriveProjectMemberNameH2() throws SQLException {
 
+        JdbcDataSource dataSource = new JdbcDataSource();
+        dataSource.setURL("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
+
+        connection = dataSource.getConnection();
+        Flyway.configure().dataSource(dataSource).load().migrate();
+
+        dao = new ProjectMemberDao(dataSource);
 
         String memberName = pickOne(new String[]{"Per", "Knut", "Arne", "Johannes"});
 
