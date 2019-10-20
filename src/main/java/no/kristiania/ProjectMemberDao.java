@@ -1,5 +1,6 @@
 package no.kristiania;
 
+import org.flywaydb.core.Flyway;
 import org.postgresql.ds.PGSimpleDataSource;
 import javax.sql.DataSource;
 import java.io.FileReader;

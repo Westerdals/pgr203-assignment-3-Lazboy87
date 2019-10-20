@@ -12,7 +12,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.flywaydb:flyway-core:6.0.3" level="project" />
-    <orderEntry type="library" name="Maven: org.flywaydb:flyway-core:6.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.2.8.jre6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.h2database:h2:1.4.199" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter:5.5.2" level="project" />
