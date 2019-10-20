@@ -1,8 +1,10 @@
 package no.kristiania;
-
 import org.h2.jdbcx.JdbcDataSource;
 import org.junit.jupiter.api.Test;
+
+
 import java.sql.Connection;
+
 import java.sql.SQLException;
 import java.util.*;
 
@@ -15,7 +17,7 @@ public class ProjectmemberTest {
 
 
     @Test
-    void shouldRetriveProjectMemberName() throws SQLException {
+    void shouldRetriveProjectMemberNameH2() throws SQLException {
         try {
             JdbcDataSource dataSource = new JdbcDataSource();
             dataSource.setURL("jdbc:h2:mem:test");
@@ -41,7 +43,7 @@ public class ProjectmemberTest {
 
 
     @Test
-    void shouldRetriveProjectMemberMail() throws SQLException {
+    void shouldRetriveProjectMemberMailH2() throws SQLException {
         try {
             JdbcDataSource dataSource = new JdbcDataSource();
             dataSource.setURL("jdbc:h2:mem:test");
@@ -66,7 +68,7 @@ public class ProjectmemberTest {
 
 
     @Test
-    void shouldRetriveProjectMemberNameandMail() throws SQLException {
+    void shouldRetriveProjectMemberNameandMailH2() throws SQLException {
         try {
             JdbcDataSource dataSource = new JdbcDataSource();
             dataSource.setURL("jdbc:h2:mem:test");
@@ -96,6 +98,7 @@ public class ProjectmemberTest {
 
 
     }
+
 
 
 

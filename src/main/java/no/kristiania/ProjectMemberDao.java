@@ -2,7 +2,6 @@ package no.kristiania;
 
 import org.postgresql.ds.PGSimpleDataSource;
 import javax.sql.DataSource;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -51,6 +50,10 @@ public class ProjectMemberDao {
             }
         }
     }
+
+
+
+
 
     public static void main(String[] args) throws SQLException, IOException {
         System.out.println("enter a member name to insert: ");
