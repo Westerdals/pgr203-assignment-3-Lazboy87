@@ -40,8 +40,8 @@ Dersom dere vil ta oppgaven videre for å være forberedt til eksamen kan dere *
 * [ ] `mvn package` bygger en executable jar-fil
 * [ ] `java -jar target/...jar` (etter `mvn package`) starter opp en webserver
 * [ ] `README.md` beskriver prosjektet, hvordan man bygger det og hvordan man kjører det 
-* [ ] Programmet leser `dataSource.url`, `dataSource.username` og `dataSource.password` fra `task-manager.properties` for å connecte til databasen
-* [ ] Programmet bruker Flywaydb for å sette opp databaseskjema
+* [ x] Programmet leser `dataSource.url`, `dataSource.username` og `dataSource.password` fra `task-manager.properties` for å connecte til databasen
+* [x ] Programmet bruker Flywaydb for å sette opp databaseskjema
 * [x ] Programmet kan liste prosjektdeltagere fra databasen
 * [x ] Programmet lar bruker opprette nye prosjektdeltagere i databasen
 * [x ] Koden inneholder et godt sett med tester og testene kjører i Travis CI

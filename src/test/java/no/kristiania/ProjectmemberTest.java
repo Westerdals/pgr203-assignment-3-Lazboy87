@@ -3,11 +3,8 @@ package no.kristiania;
 import org.flywaydb.core.Flyway;
 import org.h2.jdbcx.JdbcDataSource;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-
-import java.sql.Connection;
-
 import java.sql.SQLException;
 import java.util.*;
 
@@ -15,20 +12,25 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class ProjectmemberTest {
 
+    private JdbcDataSource jdbcDataSource;
 
-    private JdbcDataSource testDataSource() {
-        JdbcDataSource dataSource = new JdbcDataSource();
-        dataSource.setURL("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
-        Flyway.configure().dataSource(dataSource).load().migrate();
-        return dataSource;
+
+    @BeforeEach
+void testDataSource() {
+        jdbcDataSource = new JdbcDataSource();
+        jdbcDataSource.setURL("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
+        Flyway.configure().dataSource(jdbcDataSource).load().migrate();
+
+
     }
 
 
     @Test
     void shouldRetriveProjectMemberNameH2() throws SQLException {
-        JdbcDataSource dataSource = testDataSource();
 
-        ProjectMemberDao dao = new ProjectMemberDao(dataSource);
+        ProjectMemberDao dao = new ProjectMemberDao(jdbcDataSource);
+
+
 
         String memberName = pickOne(new String[]{"Per", "Knut", "Arne", "Johannes"});
 
@@ -41,9 +43,9 @@ public class ProjectmemberTest {
 
     @Test
     void shouldRetriveProjectMemberMailH2() throws SQLException {
-        JdbcDataSource dataSource = testDataSource();
 
-        ProjectMemberDao dao = new ProjectMemberDao(dataSource);
+
+        ProjectMemberDao dao = new ProjectMemberDao(jdbcDataSource);
 
         String memberMail = pickOne(new String[]{"Per@kristiania.no", "Knut@kristiania.no", "Arne@kristiania.no", "Johannes@kristiania.no"});
 
@@ -58,10 +60,9 @@ public class ProjectmemberTest {
     @Test
     void shouldRetriveProjectMemberNameandMailH2() throws SQLException {
 
-        JdbcDataSource dataSource = testDataSource();
 
 
-        ProjectMemberDao dao = new ProjectMemberDao(dataSource);
+        ProjectMemberDao dao = new ProjectMemberDao(jdbcDataSource);
 
         String memberName = pickOne(new String[]{"Per", "Knut", "Arne", "Johannes"});
         String memberMail = memberName + "@kristiania.no";

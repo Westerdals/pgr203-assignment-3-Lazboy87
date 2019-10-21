@@ -26,7 +26,7 @@ public class ProjectMemberDao {
 
         try (Connection conn = dataSource.getConnection();) {
             PreparedStatement statement = conn.prepareStatement(
-                    "insert into projectMembers (name, email) values (? , ?)");
+                    "insert into projectmembers (name, email) values (? , ?)");
             statement.setString(1, memberName);
             statement.setString(2, memberMail);
             statement.executeUpdate();
@@ -37,7 +37,7 @@ public class ProjectMemberDao {
     public List<String> listAll() throws SQLException {
         try (Connection connection = dataSource.getConnection()) {
             try (PreparedStatement statement = connection.prepareStatement(
-                    "select * from projectMembers"
+                    "select * from projectmembers"
             )) {
                 try (ResultSet resultSet = statement.executeQuery()) {
                     List<String> result = new ArrayList<>();
