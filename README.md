@@ -18,9 +18,11 @@ Prosjektet inneholder en database opprettet i java som en kan hente ut prosjektm
 
  ## Implementation notes
  
-<Hva gjorde dere godt i implementasjonen>
+Hva gjorde dere godt i implementasjonen?
+Parrprogramerte godt og fikk god forståelse av databaser når vi gjorde dette.
 
-<Hva følte dere at dere ikke fikk til i implementasjonen>
+Hva følte dere at dere ikke fikk til i implementasjonen?
+Slet med implementasjon av FLyawaydb og få til at dependency leste fil.
 
 ## Link to review
 
