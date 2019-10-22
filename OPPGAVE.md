@@ -37,7 +37,7 @@ Dersom dere vil ta oppgaven videre for å være forberedt til eksamen kan dere *
 
 * [x] Koden er sjekket inn på github.com/Westerdals-repository
 * [x] `README.md` inneholder en korrekt link til Travis CI
-* [ ] `mvn package` bygger en executable jar-fil
+* [x] `mvn package` bygger en executable jar-fil
 * [ ] `java -jar target/...jar` (etter `mvn package`) starter opp en webserver
 * [ ] `README.md` beskriver prosjektet, hvordan man bygger det og hvordan man kjører det 
 * [x] Programmet leser `dataSource.url`, `dataSource.username` og `dataSource.password` fra `task-manager.properties` for å connecte til databasen
