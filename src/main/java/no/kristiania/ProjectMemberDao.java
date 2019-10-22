@@ -70,7 +70,7 @@ public class ProjectMemberDao {
         dataSource.setURL(properties.getProperty("dataSource.url"));
         dataSource.setUser(properties.getProperty("dataSource.User"));
         dataSource.setPassword(properties.getProperty("dataSource.password"));
-
+        Flyway.configure().dataSource(dataSource).load().migrate();
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
         memberDao.insertMember(projectName,projectMail);
 
