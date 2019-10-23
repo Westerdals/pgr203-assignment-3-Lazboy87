@@ -6,11 +6,11 @@ Prosjektet inneholder en database opprettet i java som en kan hente ut prosjektm
 
 ## Usage
 
-1. <Hvilken kommando bruker man for å bygge prosjektet>
-2. <Hvilken kommando bruker man for å programmet>
-3. <Hvordan oppretter man en ny prosjektdeltager?>
-4. <VALGFRITT: Hvordan oppretter man en ny prosjektoppgave>
-5. <VALGFRITT: Hvordan bruker man http server til å opprette data?> 
+1. mvn package
+2. java -jar target\task-manager-1.0-SNAPSHOT.jar
+
+3. man skriver det inn i comandprompt.
+
  
  ## Design (valgfritt)
  
@@ -19,10 +19,10 @@ Prosjektet inneholder en database opprettet i java som en kan hente ut prosjektm
  ## Implementation notes
  
 Hva gjorde dere godt i implementasjonen?
-Parrprogramerte godt og fikk god forståelse av databaser når vi gjorde dette.
+Parrprogrammerte godt og fikk god forståelse av databaser når vi gjorde dette.
 
 Hva følte dere at dere ikke fikk til i implementasjonen?
-Slet med implementasjon av FLyawaydb og få til at dependency leste fil.
+Slet med implementasjon av FLyawaydb og få til at dependency lese fil.
 
 ## Link to review
 
