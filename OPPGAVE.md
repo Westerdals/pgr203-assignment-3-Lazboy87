@@ -38,19 +38,19 @@ Dersom dere vil ta oppgaven videre for å være forberedt til eksamen kan dere *
 * [x] Koden er sjekket inn på github.com/Westerdals-repository
 * [x] `README.md` inneholder en korrekt link til Travis CI
 * [x] `mvn package` bygger en executable jar-fil
-* [ ] `java -jar target/...jar` (etter `mvn package`) 
-* [ ] `README.md` beskriver prosjektet, hvordan man bygger det og hvordan man kjører det 
+* [x] `java -jar target/...jar` (etter `mvn package`) 
+* [x] `README.md` beskriver prosjektet, hvordan man bygger det og hvordan man kjører det 
 * [x] Programmet leser `dataSource.url`, `dataSource.username` og `dataSource.password` fra `task-manager.properties` for å connecte til databasen
 * [x] Programmet bruker Flywaydb for å sette opp databaseskjema
 * [x] Programmet kan liste prosjektdeltagere fra databasen
 * [x] Programmet lar bruker opprette nye prosjektdeltagere i databasen
 * [x] Koden inneholder et godt sett med tester og testene kjører i Travis CI
 * [x] GitHub repository er private, men delt med gruppen dere gjør hverandrevurdering på
-* [ ] Dere har mottatt minst 2 positive og 2 korrektive GitHub issues i github repository fra en annen gruppe
-* [ ] Dere har gitt minst 2 positive og 2 korrektive GitHub issues til en annen gruppe og inkluderer link til disse fra README.md
+* [x] Dere har mottatt minst 2 positive og 2 korrektive GitHub issues i github repository fra en annen gruppe
+* [x] Dere har gitt minst 2 positive og 2 korrektive GitHub issues til en annen gruppe og inkluderer link til disse fra README.md
 * [x] Veilederne er lagt til som Collaborators på GitHub repository (`alacho2`, `aridder`, `asmadsen`)
 * [x] Dere har committed kode med begge prosjektdeltagernes GitHub konto
-* [ ] Dere har registrert link til GitHub repository i Canvas
+* [x] Dere har registrert link til GitHub repository i Canvas
 
 ## Sjekkliste for god leveranse
 
