@@ -26,4 +26,4 @@ Slet med implementasjon av FLyawaydb og få til at dependency lese fil.
 
 ## Link to review
 
-* link to issue you registered in other group's github repository
+https://github.com/Westerdals/pgr203-assignment-3-eolseng/issues
