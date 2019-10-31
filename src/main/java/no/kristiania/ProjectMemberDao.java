@@ -34,18 +34,23 @@ public class ProjectMemberDao {
 
     }
 
-    public List<String> listAll() throws SQLException {
+    public List<ProjectMember> listAll() throws SQLException {
+
         try (Connection connection = dataSource.getConnection()) {
             try (PreparedStatement statement = connection.prepareStatement(
                     "select * from projectmembers"
             )) {
                 try (ResultSet resultSet = statement.executeQuery()) {
-                    List<String> result = new ArrayList<>();
+                    List<ProjectMember> result = new ArrayList<>();
+                    ProjectMember projectMember;
 
                     while (resultSet.next()) {
-                        result.add(resultSet.getString("name"));
-                        result.add(resultSet.getString("email"));
+
+                      result.add(projectMember = new ProjectMember(resultSet.getString("name"), resultSet.getString("email")));
+
+
                     }
+
                     return result;
                 }
             }
