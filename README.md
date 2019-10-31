@@ -1,6 +1,6 @@
 #Lasse og Fredrick DOA ProjectMembers
 
-[![Build Status](https://travis-ci.com/Westerdals/pgr203-assignment-3-Lazboy87.svg?token=u5uiMCxAwytqi2hpiwkt&branch=master)](https://travis-ci.com/Westerdals/pgr203-assignment-3-Lazboy87.svg?token=u5uiMCxAwytqi2hpiwkt&branch=master)
+[![Build Status](https://travis-ci.com/Westerdals/pgr203-assignment-3-Lazboy87.svg?token=u5uiMCxAwytqi2hpiwkt&branch=master)](https://travis-ci.com/Westerdals/pgr203-assignment-3-Lazboy87)
 
 Prosjektet inneholder en database opprettet i java som en kan hente ut prosjektmedlemmer og legge til nye prosjektmedlemmer.
 
