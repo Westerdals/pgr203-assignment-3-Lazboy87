@@ -22,13 +22,13 @@ public class ProjectMemberDao {
         this.dataSource = dataSource;
     }
 
-    public void insertMember(String memberName, String memberMail) throws SQLException {
+    public void insertMember(ProjectMember member) throws SQLException {
 
         try (Connection conn = dataSource.getConnection();) {
             PreparedStatement statement = conn.prepareStatement(
                     "insert into projectmembers (name, email) values (? , ?)");
-            statement.setString(1, memberName);
-            statement.setString(2, memberMail);
+            statement.setString(1, member.getName());
+            statement.setString(2, member.getMail());
             statement.executeUpdate();
         }
 
@@ -72,7 +72,7 @@ public class ProjectMemberDao {
         dataSource.setPassword(properties.getProperty("dataSource.password"));
         Flyway.configure().dataSource(dataSource).load().migrate();
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
-        memberDao.insertMember(projectName,projectMail);
+        memberDao.insertMember(new ProjectMember(projectName, projectMail));
 
         System.out.println(memberDao.listAll());
     }
