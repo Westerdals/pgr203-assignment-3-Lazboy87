@@ -68,7 +68,7 @@ public class ProjectMemberDao {
 
         PGSimpleDataSource dataSource= new PGSimpleDataSource();
         dataSource.setURL(properties.getProperty("dataSource.url"));
-        dataSource.setUser(properties.getProperty("dataSource.User"));
+        dataSource.setUser(properties.getProperty("dataSource.username"));
         dataSource.setPassword(properties.getProperty("dataSource.password"));
         Flyway.configure().dataSource(dataSource).load().migrate();
         ProjectMemberDao memberDao = new ProjectMemberDao(dataSource);
